@@ -1682,31 +1682,38 @@
 
     const CHUNGCHUPJANG_URL = 'https://thme808.github.io/wedding-invitation';
 
-    document.getElementById('kakao-share-btn').addEventListener('click', function() {
-      Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: '승미 ♥ 충규 결혼합니다',
-          description: '2026년 5월 09일(토) 오후 6시\nMBC컨벤션진주 뷔페',
-          imageUrl: 'https://thme808.github.io/wedding-invitation/images/main.jpeg',
-          imageWidth: 1200,
-          imageHeight: 1800,
-          link: {
-            mobileWebUrl: CHUNGCHUPJANG_URL,
-            webUrl: CHUNGCHUPJANG_URL,
-          },
-        },
-        buttons: [
-          {
-            title: '청첩장 보기',
+    var kakaoBtn = document.getElementById('kakao-share-btn');
+    if (kakaoBtn) {
+      kakaoBtn.addEventListener('click', function() {
+        if (!Kakao.isInitialized()) {
+          alert('카카오 SDK 초기화에 실패했습니다.');
+          return;
+        }
+        Kakao.Share.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: '승미 ♥ 충규 결혼합니다',
+            description: '2026년 5월 09일(토) 오후 6시\nMBC컨벤션진주 뷔페',
+            imageUrl: 'https://thme808.github.io/wedding-invitation/images/main.jpeg',
+            imageWidth: 1200,
+            imageHeight: 1800,
             link: {
               mobileWebUrl: CHUNGCHUPJANG_URL,
               webUrl: CHUNGCHUPJANG_URL,
             },
           },
-        ],
+          buttons: [
+            {
+              title: '청첩장 보기',
+              link: {
+                mobileWebUrl: CHUNGCHUPJANG_URL,
+                webUrl: CHUNGCHUPJANG_URL,
+              },
+            },
+          ],
+        });
       });
-    });
+    }
   </script>
 </body>
 </html>
