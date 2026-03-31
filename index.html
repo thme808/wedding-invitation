@@ -8,9 +8,9 @@
   <meta property="og:url" content="https://thme808.github.io/wedding-invitation/">
   <meta property="og:title" content="승미 🤍 충규 결혼합니다">
   <meta property="og:description" content="2026년 5월 09일 오후 6시&#10;MBC컨벤션진주">
-  <meta property="og:image" content="https://thme808.github.io/wedding-invitation/images/og-image.jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="600">
+  <meta property="og:image" content="https://thme808.github.io/wedding-invitation/images/og-main.png">
+  <meta property="og:image:width" content="430">
+  <meta property="og:image:height" content="932">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -261,70 +261,56 @@
       text-align: center;
     }
 
-    .greeting-photo {
-      width: 100%;
-      max-width: 350px;
-      margin: 0 auto 30px;
-      aspect-ratio: 3 / 4.2;
-      position: relative;
+    .banquet-card {
+      max-width: 360px;
+      margin: 0 auto;
+      background: #fff;
       border-radius: 16px;
-      overflow: hidden;
+      border: 1px solid var(--border);
+      padding: 36px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
 
-    .greeting-photo::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      box-shadow: inset 0 0 40px 30px #fff;
-      pointer-events: none;
-    }
-
-    .greeting-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-    }
-
-    .greeting-text {
+    .banquet-card-text {
       font-size: 17px;
       line-height: 2.2;
       color: var(--text-dark);
       font-weight: 300;
-      margin-top: 60px;
-
-      margin-bottom: 60px;
       word-break: keep-all;
+      text-align: center;
     }
 
-    .parents-info {
-      font-size: 18px;
-      line-height: 2.4;
-      color: var(--text-dark);
-    }
-
-    .parents-info .label {
-      color: var(--text-light);
-      font-size: 16px;
-    }
-
-    .parents-info .deceased {
-      font-size: 14px;
-      color: var(--text-light);
-    }
-
-    .parents-info .parent-row {
-      margin-bottom: 5px;
-    }
-
-    .parents-divider {
-      width: 30px;
+    .banquet-card-divider {
+      width: 100%;
       height: 1px;
-      background: var(--light-rose);
-      margin: 20px auto;
+      background: var(--border);
+      margin: 28px 0;
+    }
+
+    .banquet-card-info {
+      text-align: center;
+    }
+
+    .banquet-card-item {
+      margin-bottom: 20px;
+    }
+
+    .banquet-card-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .banquet-card-label {
+      display: block;
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .banquet-card-value {
+      display: block;
+      font-size: 17px;
+      color: var(--text-dark);
+      font-weight: 400;
     }
 
     /* ===== Calendar Section ===== */
@@ -578,21 +564,80 @@
       text-align: center;
     }
 
+    .location-card {
+      background: var(--bg-cream);
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+    }
+
+    .location-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .location-card-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--rose);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .location-card-badge.banquet {
+      background: var(--groom-color);
+    }
+
+    .location-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .location-card-header .location-card-badge {
+      margin-bottom: 0;
+    }
+
+    .location-fold-arrow {
+      font-size: 10px;
+      color: var(--text-light);
+      transition: transform 0.3s;
+    }
+
+    .location-card-header.open .location-fold-arrow {
+      transform: rotate(180deg);
+    }
+
+    .location-card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .location-card-body.open {
+      max-height: 600px;
+      margin-top: 16px;
+    }
+
     .location-name {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       margin-bottom: 8px;
     }
 
     .location-address {
-      font-size: 13px;
+      font-size: 17px;
       color: var(--text-light);
       margin-bottom: 5px;
       line-height: 1.8;
     }
 
     .location-tel {
-      font-size: 13px;
+      font-size: 17px;
       color: var(--text-light);
       margin-bottom: 25px;
     }
@@ -637,6 +682,8 @@
       cursor: pointer;
       border-radius: 8px;
       transition: all 0.3s;
+      text-decoration: none;
+      text-align: center;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -1135,6 +1182,8 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+
+    /* ===== Banquet Section ===== */
   </style>
 </head>
 <body>
@@ -1180,9 +1229,9 @@
         <div class="main-bottom-center">
           <span class="main-bottom-label">I N V I T A T I O N</span>
           <span class="main-bottom-label-to">to</span>
-          <span class="main-bottom-title">웨딩 피로연</span>
-          <span class="main-bottom-info date">2026.05.09 오후 6시</span>
-          <span class="main-bottom-info">MBC컨벤션진주 | 뷔페</span>
+          <span class="main-bottom-title">Our Wedding</span>
+          <span class="main-bottom-info date">2026.05.17 오후 2시</span>
+          <span class="main-bottom-info">더화이트베일 | 1층 화이트베일홀</span>
         </div>
       </div>
     </div>
@@ -1190,41 +1239,38 @@
     <div class="scroll-indicator">🤍</div>
   </section>
 
-  <!-- ===== 2. GREETING SECTION ===== -->
+  <!-- ===== 2. 피로연 안내 SECTION ===== -->
   <section class="greeting-section" id="greeting">
-    <div class="section-title" data-aos="fade-up">귀한 분들을 초대합니다</div>
+    <div class="section-title" data-aos="fade-up">피로연 안내</div>
     <div class="divider" data-aos="fade-up"></div>
 
-    <div class="greeting-photo" data-aos="fade-up">
-      <img src="images/img11.jpeg" alt="인사하는 신랑신부">
-    </div>
-
-    <div class="greeting-text" data-aos="fade-up">
-      같은 해의 시간을 나란히 걸어온 두 사람이<br>
-      하나의 계절이 되고자 합니다.<br><br>
-
-      먼 걸음해주시기 어려운 분들을 모시고자<br>
-      작은 피로연 자리를 마련하였습니다.<br><br>
-
-      소중한 걸음으로 오셔서<br>
-      두 사람의 시작을 축복해주세요.
-    </div>
-
-    <div class="parents-info" data-aos="fade-up">
-      <div class="parent-row">
-      <div class="parent-row">
-        강기훈 · 추미순 <span class="label">의 독녀</span> <strong>승 미</strong>
+    <div class="banquet-card" data-aos="fade-up">
+      <div class="banquet-card-text">
+        먼 걸음해주시기 어려운 분들을 모시고자<br>
+        피로연 자리를 마련하였습니다.<br><br>
+        소중한 걸음으로 오셔서<br>
+        두 사람의 시작을 축복해주세요.
       </div>
-        강헌승 · 이혜경 <span class="label">의 장남</span> <strong>충 규</strong>
+
+      <div class="banquet-card-divider"></div>
+
+      <div class="banquet-card-info">
+        <div class="banquet-card-item">
+          <span class="banquet-card-label">[장소]</span>
+          <span class="banquet-card-value">
+            MBC컨벤션진주 | 뷔페</span>
+        </div>
+        <div class="banquet-card-item">
+          <span class="banquet-card-label">[일시]</span>
+          <span class="banquet-card-value">2026년 5월 9일 토요일 오후 6시</span>
+        </div>
       </div>
-      <div class="parents-divider"></div>
-   
     </div>
   </section>
 
   <!-- ===== 3. CALENDAR SECTION ===== -->
   <section class="calendar-section" id="calendar">
-    <div class="section-title" data-aos="fade-up">C A L E N D A R</div>
+    <div class="section-title" data-aos="fade-up">본식 안내</div>
     <div class="divider" data-aos="fade-up"></div>
 
     <div class="calendar" data-aos="fade-up">
@@ -1254,7 +1300,7 @@
         <div class="day">6</div>
         <div class="day">7</div>
         <div class="day">8</div>
-        <div class="day sun highlight">9</div>
+        <div class="day">9</div>
 
         <!-- Week 3 -->
         <div class="day sun">10</div>
@@ -1266,7 +1312,7 @@
         <div class="day">16</div>
 
         <!-- Week 4 -->
-        <div class="day">17</div>
+        <div class="day sun highlight">17</div>
         <div class="day">18</div>
         <div class="day">19</div>
         <div class="day">20</div>
@@ -1426,17 +1472,34 @@
     <div class="section-title" data-aos="fade-up">L O C A T I O N</div>
     <div class="divider" data-aos="fade-up"></div>
 
-    <div data-aos="fade-up">
-      <div class="location-name">MBC컨벤션진주 뷔페</div>
-      <div class="location-address">
-        진주시 동진로 415 진주종합경기장 내<br>
-        
+    <!-- 본식 -->
+    <div class="location-card" data-aos="fade-up">
+      <div class="location-card-badge">본식</div>
+      <div class="location-name">더화이트베일 1층 화이트베일홀</div>
+      <div class="location-address">서울 서초구 서초중앙로 14</div>
+      <div class="location-tel"><a href="tel:02-3474-5000">02-3474-5000</a></div>
+      <div class="map-container" id="kakaoMap"></div>
+      <div class="map-buttons" style="margin-top:15px;">
+        <a class="map-btn" href="https://map.kakao.com/link/to/더화이트베일,37.483561,127.018062" target="_blank">카카오내비</a>
+        <a class="map-btn" href="https://map.naver.com/p/search/%EB%8D%94%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B2%A0%EC%9D%BC/place/12023277" target="_blank">네이버지도</a>
       </div>
-      <div class="location-tel">
-        <a href="tel:055-762-0200">055-762-0200</a>
+    </div>
+
+    <!-- 피로연 (접기/펼치기) -->
+    <div class="location-card" data-aos="fade-up">
+      <div class="location-card-header" onclick="toggleLocation(this)">
+        <div class="location-card-badge banquet">피로연</div>
+        <span class="location-fold-arrow">▼</span>
       </div>
-      <div class="map-container" style="height:auto; background:none;">
-        <img src="images/mbcmap.png" alt="오시는 길 약도" style="width:100%; display:block; border-radius:50px;">
+      <div class="location-card-body">
+        <div class="location-name">MBC컨벤션진주 뷔페</div>
+        <div class="location-address">진주시 동진로 415</div>
+        <div class="location-tel"><a href="tel:055-762-0200">055-762-0200</a></div>
+        <div class="map-container" id="kakaoMap2"></div>
+        <div class="map-buttons" style="margin-top:15px;">
+          <a class="map-btn" href="https://map.kakao.com/link/to/MBC컨벤션진주,35.183077,128.137008" target="_blank">카카오내비</a>
+          <a class="map-btn" href="https://map.naver.com/p/search/mbc%EC%BB%A8%EB%B2%A4%EC%85%98%EC%A7%84%EC%A3%BC/place/31575756" target="_blank">네이버지도</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1454,7 +1517,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    승미 🤍 충규 피로연 초대장
+    승미 🤍 충규 청첩장
   </div>
 
   <!-- ===== Navigation ===== -->
@@ -1559,7 +1622,7 @@
         const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-        ddayEl.textContent = `웨딩 피로연까지 D-${days}`;
+        ddayEl.textContent = `웨딩 D-${days}`;
         document.getElementById('cd-days').textContent = days;
         document.getElementById('cd-hours').textContent = hours;
         document.getElementById('cd-mins').textContent = mins;
@@ -1694,6 +1757,13 @@
     // ===== Kakao Share =====
     // shareKakao는 더 이상 사용하지 않음 - 카카오 SDK 스크립트에서 직접 처리
 
+    // ===== Location Toggle =====
+    function toggleLocation(header) {
+      header.classList.toggle('open');
+      var body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+
     // ===== Music =====
     function toggleMusic() {
       const btn = document.getElementById('musicToggle');
@@ -1741,6 +1811,36 @@
     }, { passive: true });
   </script>
 
+  <!-- 카카오 지도 -->
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f3359a0f2bc25c6f0533299d187d2d35"></script>
+  <script>
+    if (typeof kakao !== 'undefined') {
+      // 본식 지도 (좌표는 나중에 업데이트)
+      var map1Container = document.getElementById('kakaoMap');
+      if (map1Container) {
+        var map1 = new kakao.maps.Map(map1Container, {
+          center: new kakao.maps.LatLng(37.483561, 127.018062),
+          level: 4
+        });
+        new kakao.maps.Marker({
+          position: new kakao.maps.LatLng(37.483561, 127.018062)
+        }).setMap(map1);
+      }
+
+      // 피로연 지도
+      var map2Container = document.getElementById('kakaoMap2');
+      if (map2Container) {
+        var map2 = new kakao.maps.Map(map2Container, {
+          center: new kakao.maps.LatLng(35.183077, 128.137008),
+          level: 4
+        });
+        new kakao.maps.Marker({
+          position: new kakao.maps.LatLng(35.183077, 128.137008)
+        }).setMap(map2);
+      }
+    }
+  </script>
+
   <!-- 카카오톡 공유 스크립트 -->
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
   <script>
@@ -1760,10 +1860,10 @@
           objectType: 'feed',
           content: {
             title: '승미 🤍 충규 결혼합니다',
-            description: '2026년 5월 09일(토) 오후 6시\nMBC컨벤션진주 뷔페',
-            imageUrl: 'https://thme808.github.io/wedding-invitation/images/main.jpeg',
-            imageWidth: 1200,
-            imageHeight: 1800,
+            description: '2026년 5월 17일 일요일 오후 6시\n더화이트베일 1층 화이트베일홀',
+            imageUrl: 'https://thme808.github.io/wedding-invitation/images/og-main.png',
+            imageWidth: 430,
+            imageHeight: 932,
             link: {
               mobileWebUrl: CHUNGCHUPJANG_URL,
               webUrl: CHUNGCHUPJANG_URL,
@@ -1771,7 +1871,7 @@
           },
           buttons: [
             {
-              title: '피로연 초대장',
+              title: '청첩장 보기',
               link: {
                 mobileWebUrl: CHUNGCHUPJANG_URL,
                 webUrl: CHUNGCHUPJANG_URL,
