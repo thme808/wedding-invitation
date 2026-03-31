@@ -1777,7 +1777,7 @@
       setTimeout(function() { loader.remove(); }, 600);
     });
 
-    document.addEventListener('click', function startMusic() {
+    function startMusic() {
       var audio = document.getElementById('bgMusic');
       audio.volume = 0.4;
       var btn = document.getElementById('musicToggle');
@@ -1785,7 +1785,12 @@
         btn.classList.add('playing');
       }).catch(function() {});
       document.removeEventListener('click', startMusic);
-    }, { once: true });
+      document.removeEventListener('scroll', startMusic);
+      document.removeEventListener('touchstart', startMusic);
+    }
+    document.addEventListener('click', startMusic, { once: false });
+    document.addEventListener('scroll', startMusic, { once: false });
+    document.addEventListener('touchstart', startMusic, { once: false });
   </script>
 </body>
 </html>
