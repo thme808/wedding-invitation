@@ -336,6 +336,28 @@
       letter-spacing: 0.5px;
     }
 
+    .reception-data-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .reception-data-row .reception-data {
+      display: inline;
+    }
+
+    .reception-location-link {
+      font-size: 11px;
+      padding: 3px 12px;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 0 !important;
+      margin-bottom: 0 !important;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
     /* ===== Calendar Section ===== */
     .calendar-section {
       background: var(--bg-cream);
@@ -1278,7 +1300,11 @@
 
       <div class="reception-info-group">
         <div class="reception-label">장소</div>
-        <div class="reception-data">MBC컨벤션진주 | 뷔페</div>
+        <div class="reception-data-row">
+          <a href="#banquet-location" class="location-card-badge banquet reception-location-link">지도</a>
+
+          <span class="reception-data">MBC컨벤션진주 | 뷔페</span>
+        </div>
       </div>
 
       <div class="reception-info-group">
@@ -1506,7 +1532,7 @@
     </div>
 
     <!-- 피로연 (접기/펼치기) -->
-    <div class="location-card" data-aos="fade-up">
+    <div class="location-card" data-aos="fade-up" id="banquet-location">
       <div class="location-card-header" onclick="toggleLocation(this)">
         <div class="location-card-badge banquet">피로연</div>
         <span class="location-fold-arrow">▼</span>
@@ -1783,6 +1809,16 @@
       var body = header.nextElementSibling;
       body.classList.toggle('open');
     }
+
+    // 피로연 지도 링크 클릭 시 자동 펼치기
+    document.querySelector('.reception-location-link').addEventListener('click', function() {
+      var header = document.querySelector('#banquet-location .location-card-header');
+      var body = document.querySelector('#banquet-location .location-card-body');
+      if (!body.classList.contains('open')) {
+        header.classList.add('open');
+        body.classList.add('open');
+      }
+    });
 
     // ===== Music =====
     function toggleMusic() {
