@@ -810,6 +810,29 @@
       border: none;
     }
 
+    .modal-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 48px;
+      cursor: pointer;
+      z-index: 201;
+      padding: 8px 14px;
+      border-radius: 50%;
+      line-height: 1;
+      transition: background 0.2s;
+    }
+
+    .modal-arrow:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .modal-prev { left: 12px; }
+    .modal-next { right: 12px; }
+
     /* ===== RSVP Modal ===== */
     .rsvp-modal {
       display: none;
@@ -1202,15 +1225,65 @@
 
     <div class="gallery-grid" data-aos="fade-up" id="galleryGrid">
       <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/main.jpeg" alt="웨딩 사진 1">
+        <img src="images/img1.jpeg" alt="웨딩 사진 1">
       </div>
       <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/hello.jpeg" alt="웨딩 사진 2">
+        <img src="images/img2.jpeg" alt="웨딩 사진 2">
       </div>
       <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/KakaoTalk_Photo_2026-03-24-10-44-51 011.jpeg" alt="웨딩 사진 3">
+        <img src="images/img3.jpeg" alt="웨딩 사진 3">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img4.jpeg" alt="웨딩 사진 4">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img5.jpeg" alt="웨딩 사진 5">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img6.jpeg" alt="웨딩 사진 6">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img7.jpeg" alt="웨딩 사진 7">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img8.jpeg" alt="웨딩 사진 8">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img9.jpeg" alt="웨딩 사진 9">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img10.jpeg" alt="웨딩 사진 10">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img11.jpeg" alt="웨딩 사진 11">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img12.jpeg" alt="웨딩 사진 12">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img13.jpeg" alt="웨딩 사진 13">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img14.jpeg" alt="웨딩 사진 14">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img15.jpeg" alt="웨딩 사진 15">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img16.jpeg" alt="웨딩 사진 16">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img17.jpeg" alt="웨딩 사진 17">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img18.jpeg" alt="웨딩 사진 18">
+      </div>
+      <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img19.jpeg" alt="웨딩 사진 19">
       </div>
     </div>
+
+    <button class="gallery-more-btn" id="galleryMoreBtn" onclick="toggleGallery()">더 보기</button>
   </section>
 
   <!-- ===== 5. ACCOUNT SECTION ===== -->
@@ -1307,7 +1380,9 @@
   <!-- Image Modal -->
   <div class="modal-overlay" id="imageModal" onclick="closeModal()">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <img id="modalImage" src="" alt="">
+    <button class="modal-arrow modal-prev" onclick="event.stopPropagation(); changeSlide(-1)">&#8249;</button>
+    <img id="modalImage" src="" alt="" onclick="event.stopPropagation()">
+    <button class="modal-arrow modal-next" onclick="event.stopPropagation(); changeSlide(1)">&#8250;</button>
   </div>
 
   <!-- RSVP Modal -->
@@ -1409,9 +1484,14 @@
     }
 
     // ===== Image Modal =====
+    let galleryImages = [];
+    let currentSlide = 0;
+
     function openModal(el) {
       const img = el.querySelector('img');
       if (!img) return;
+      galleryImages = Array.from(document.querySelectorAll('.gallery-item img')).map(i => i.src);
+      currentSlide = galleryImages.indexOf(img.src);
       document.getElementById('modalImage').src = img.src;
       document.getElementById('imageModal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -1420,6 +1500,11 @@
     function closeModal() {
       document.getElementById('imageModal').classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function changeSlide(dir) {
+      currentSlide = (currentSlide + dir + galleryImages.length) % galleryImages.length;
+      document.getElementById('modalImage').src = galleryImages[currentSlide];
     }
 
     // ===== Account Toggle =====
