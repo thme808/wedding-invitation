@@ -90,7 +90,7 @@
 
     .section-title {
       text-align: center;
-      font-size: 13px;
+      font-size: 20px;
       letter-spacing: 4px;
       color: var(--rose);
       margin-bottom: 30px;
@@ -106,88 +106,128 @@
 
     /* ===== Main Section ===== */
     .main-section {
-      background: var(--bg-cream);
-      text-align: center;
-      padding: 80px 30px 60px;
+      position: relative;
+      width: 100%;
       min-height: 100vh;
+      overflow: clip;
+      overflow-clip-margin: 0px;
+    }
+
+    .main-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 100vh;
+    }
+
+    .main-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+      justify-content: space-between;
+      padding: 60px 40px 100px;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      overflow: visible;
     }
 
-    .main-label {
-      font-size: 12px;
-      letter-spacing: 6px;
-      color: var(--rose);
-      margin-bottom: 40px;
-      font-weight: 300;
+    .main-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    .main-names {
-      margin-bottom: 15px;
+    .main-name-block {
+      display: flex;
+      flex-direction: column;
     }
 
-    .main-names .groom {
-      color: var(--groom-color);
-      font-size: 28px;
-      font-weight: 500;
+    .main-name-block.left {
+      align-items: flex-start;
     }
 
-    .main-names .amp {
-      color: var(--rose);
-      font-size: 16px;
-      margin: 0 12px;
-      font-weight: 300;
+    .main-name-block.right {
+      align-items: flex-end;
     }
 
-    .main-names .bride {
-      color: var(--bride-color);
-      font-size: 28px;
-      font-weight: 500;
-    }
-
-    .main-names-en {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: var(--text-light);
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
-
-    .main-photo {
-      width: 100%;
-      max-width: 350px;
-      border-radius: 0;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    }
-
-    .main-photo img {
-      width: 100%;
-      display: block;
-    }
-
-    .main-info {
-      font-size: 14px;
-      color: var(--text-dark);
-      line-height: 2;
-    }
-
-    .main-info .date {
-      font-size: 18px;
+    .main-name-ko {
+      font-size: 24px;
+      font-weight: 600;
       letter-spacing: 2px;
+    }
+
+    .main-name-en {
+      writing-mode: vertical-rl;
+      font-size: 18px;
       font-weight: 400;
+      letter-spacing: 3px;
+      margin-top: 10px;
+      max-height: 240px;
     }
 
-    .main-info .time {
-      color: var(--text-light);
+    .main-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
 
-    .main-info .venue {
-      color: var(--text-light);
+    .main-bottom-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2px;
+      background: rgba(0,0,0,0.15);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 24px 36px;
+      border-radius: 12px;
+    }
+
+    .main-bottom-label {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      opacity: 0.9;
+      margin-bottom: 20;
+    }
+
+    .main-bottom-label-to {
       font-size: 13px;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 2px;
+      opacity: 0.75;
+      margin-bottom: 6px;
+    }
+
+    .main-bottom-title {
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+      width: 100%;
+    }
+
+    .main-bottom-info {
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    .main-bottom-info.date {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 2px;
     }
 
     .scroll-indicator {
@@ -196,8 +236,9 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 11px;
-      color: var(--text-light);
+      color: #fff;
       letter-spacing: 3px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
       animation: bounce 2s infinite;
     }
 
@@ -213,6 +254,22 @@
       text-align: center;
     }
 
+    .greeting-photo {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4.2;
+    }
+
+    .greeting-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
     .greeting-text {
       font-size: 15px;
       line-height: 2.2;
@@ -223,18 +280,18 @@
     }
 
     .parents-info {
-      font-size: 14px;
+      font-size: 18px;
       line-height: 2.4;
       color: var(--text-dark);
     }
 
     .parents-info .label {
       color: var(--text-light);
-      font-size: 12px;
+      font-size: 16px;
     }
 
     .parents-info .deceased {
-      font-size: 11px;
+      font-size: 14px;
       color: var(--text-light);
     }
 
@@ -401,105 +458,97 @@
       text-align: center;
     }
 
-    .account-group {
-      margin-bottom: 30px;
+    .account-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 28px 24px;
     }
 
-    .account-group-title {
+    .account-card-title {
       font-size: 15px;
       font-weight: 400;
-      margin-bottom: 15px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--text-dark);
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-
-    .account-group-title .arrow {
-      font-size: 10px;
-      transition: transform 0.3s;
-    }
-
-    .account-group-title.open .arrow {
-      transform: rotate(180deg);
-    }
-
-    .account-group-title:hover {
-      border-color: var(--rose);
-    }
-
-    .account-list {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-
-    .account-list.open {
-      max-height: 500px;
+      color: var(--bride-color);
+      margin-bottom: 20px;
     }
 
     .account-item {
-      background: #fff;
-      padding: 18px 20px;
-      margin-top: 8px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #f0e8e8;
+    }
+
+    .account-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .account-item:first-child {
+      padding-top: 0;
     }
 
     .account-info {
       text-align: left;
     }
 
-    .account-info .relation {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-bottom: 4px;
+    .account-info .account-top-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
-    .account-info .bank {
-      font-size: 14px;
+    .account-info .relation {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .account-info .holder {
+      font-size: 15px;
+      font-weight: 500;
       color: var(--text-dark);
     }
 
+    .account-info .bank {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .account-number-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .account-bank-number {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .account-info .number {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-dark);
       font-weight: 400;
       letter-spacing: 0.5px;
     }
 
-    .account-info .holder {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 2px;
-    }
-
     .copy-btn {
-      padding: 8px 16px;
-      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border: 1px solid var(--rose);
       background: transparent;
-      color: var(--text-light);
+      color: var(--rose);
       font-family: 'Noto Serif KR', serif;
-      font-size: 12px;
+      font-size: 13px;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 20px;
       transition: all 0.3s;
       white-space: nowrap;
     }
 
     .copy-btn:hover {
-      border-color: var(--rose);
-      color: var(--rose);
+      background: var(--rose);
+      color: #fff;
     }
 
     /* ===== Location Section ===== */
@@ -691,18 +740,16 @@
     }
 
     .share-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      padding: 12px 28px;
+      border-radius: 24px;
       border: 1px solid var(--border);
       background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
       transition: all 0.3s;
-      font-size: 18px;
-      color: var(--text-light);
+      font-size: 14px;
+      font-family: "Noto Serif KR", serif;
+      color: var(--text-dark);
+      white-space: nowrap;
     }
 
     .share-btn:hover {
@@ -992,23 +1039,29 @@
 
   <!-- ===== 1. MAIN SECTION ===== -->
   <section class="main-section" id="main">
-    <div class="main-label">W E D D I N G</div>
+    <img class="main-bg" src="images/main.jpeg" alt="웨딩 메인 사진">
 
-    <div class="main-names">
-      <span class="groom">강충규</span>
-      <span class="amp">♥</span>
-      <span class="bride">강승미</span>
-    </div>
-    <div class="main-names-en">CHUNGKYU & SEUNGMI</div>
+    <div class="main-overlay">
+      <div class="main-top">
+        <div class="main-name-block left">
+          <span class="main-name-ko">강승미</span>
+          <span class="main-name-en">Seungmi</span>
+        </div>
+        <div class="main-name-block right">
+          <span class="main-name-ko">강충규</span>
+          <span class="main-name-en">ChoongKyu</span>
+        </div>
+      </div>
 
-    <div class="main-photo">
-      <img src="images/hello.jpeg" alt="웨딩 인사말">
-    </div>
-
-    <div class="main-info">
-      <div class="date">2026. 05. 09</div>
-      <div class="time">오후 6시</div>
-      <div class="venue">MBC컨벤션진주 뷔페</div>
+      <div class="main-bottom">
+        <div class="main-bottom-center">
+          <span class="main-bottom-label">I N V I T A T I O N</span>
+          <span class="main-bottom-label-to">to</span>
+          <span class="main-bottom-title">웨딩 피로연</span>
+          <span class="main-bottom-info date">2026.05.09 오후 6시</span>
+          <span class="main-bottom-info">MBC컨벤션진주 뷔페</span>
+        </div>
+      </div>
     </div>
 
     <div class="scroll-indicator">SCROLL</div>
@@ -1016,25 +1069,30 @@
 
   <!-- ===== 2. GREETING SECTION ===== -->
   <section class="greeting-section" id="greeting">
-    <div class="section-title" data-aos="fade-up">I N V I T A T I O N</div>
+    <div class="section-title" data-aos="fade-up">피로연 안내</div>
     <div class="divider" data-aos="fade-up"></div>
+
+    <div class="greeting-photo" data-aos="fade-up">
+      <img src="images/hello.jpeg" alt="인사하는 신랑신부">
+    </div>
 
     <div class="greeting-text" data-aos="fade-up">
       같은 해의 시간을 나란히 걸어온 두 사람이<br>
-      5월, 봄이 가장 깊어지는 이 날<br>
       하나의 계절이 되고자 합니다.<br><br>
-      따뜻한 햇살 아래<br>
-      함께해 주시면 큰 기쁨이 되겠습니다.
+
+      먼 걸음해주시기 어려운 분들을 모시고자<br>
+      작은 피로연 자리를 마련하였습니다.<br><br>
+
+      소중한 걸음으로 오셔서<br>
+      두 사람의 시작을 축복해주세요.
     </div>
 
     <div class="parents-info" data-aos="fade-up">
       <div class="parent-row">
       <div class="parent-row">
-        <span class="label">신부측</span><br>
-        강기훈 · 추미순 <span class="label">의 독녀</span> <strong>승미</strong>
+        강기훈 · 추미순 <span class="label">의 독녀</span> <strong>승 미</strong>
       </div>
-        <span class="label">신랑측</span><br>
-        강헌승 · 이혜경 <span class="label">의 장남</span> <strong>충규</strong>
+        강헌승 · 이혜경 <span class="label">의 장남</span> <strong>충 규</strong>
       </div>
       <div class="parents-divider"></div>
    
@@ -1143,44 +1201,15 @@
 
     <div class="gallery-grid" data-aos="fade-up" id="galleryGrid">
       <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">1</div>
+        <img src="images/main.jpeg" alt="웨딩 사진 1">
       </div>
       <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">2</div>
+        <img src="images/hello.jpeg" alt="웨딩 사진 2">
       </div>
       <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">3</div>
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">4</div>
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">5</div>
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <div class="gallery-placeholder">6</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">7</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">8</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">9</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">10</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">11</div>
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <div class="gallery-placeholder">12</div>
+        <img src="images/KakaoTalk_Photo_2026-03-24-10-44-51 011.jpeg" alt="웨딩 사진 3">
       </div>
     </div>
-
-    <button class="gallery-more-btn" id="galleryMoreBtn" onclick="toggleGallery()">더 보기</button>
   </section>
 
   <!-- ===== 5. ACCOUNT SECTION ===== -->
@@ -1189,31 +1218,30 @@
     <div class="divider" data-aos="fade-up"></div>
 
     <div data-aos="fade-up">
-
-      <!-- 신부측 -->
-      <div class="account-group">
-        <div class="account-group-title" onclick="toggleAccount(this)">
-          <span style="color: var(--bride-color);">신부측 계좌번호</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="account-list">
-          <div class="account-item">
-            <div class="account-info">
-              <div class="relation">신부 부친</div>
-              <div class="bank">농협은행</div>
-              <div class="number">80103252108143</div>
-              <div class="holder">강기훈</div>
+      <div class="account-card">
+        <div class="account-card-title">신부측 계좌번호</div>
+        <div class="account-item">
+          <div class="account-info">
+            <div class="account-top-row">
+              <span class="relation">신부 부친</span>
+              <span class="holder">강기훈</span>
             </div>
-            <button class="copy-btn" onclick="copyAccount('80103252108143')">복사</button>
+            <div class="account-number-row">
+              <span class="account-bank-number"><span class="bank">농협은행</span><span class="number">801032-52-108143</span></span>
+              <button class="copy-btn" onclick="copyAccount('80103252108143')">복사</button>
+            </div>
           </div>
-          <div class="account-item">
-            <div class="account-info">
-              <div class="relation">신부 모친</div>
-              <div class="bank">새마을금고</div>
-              <div class="number">6414100119341</div>
-              <div class="holder">추미순</div>
+        </div>
+        <div class="account-item">
+          <div class="account-info">
+            <div class="account-top-row">
+              <span class="relation">신부 모친</span>
+              <span class="holder">추미순</span>
             </div>
-            <button class="copy-btn" onclick="copyAccount('6414100119341')">복사</button>
+            <div class="account-number-row">
+              <span class="account-bank-number"><span class="bank">새마을금고</span><span class="number">6414100119341</span></span>
+              <button class="copy-btn" onclick="copyAccount('6414100119341')">복사</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1226,31 +1254,34 @@
     <div class="divider" data-aos="fade-up"></div>
 
     <div data-aos="fade-up">
-      <div class="location-name">MBC컨벤션진주</div>
+      <div class="location-name">MBC컨벤션진주 뷔페</div>
       <div class="location-address">
         진주시 동진로 415 진주종합경기장 내<br>
-        뷔페
+        
       </div>
       <div class="location-tel">
         <a href="tel:055-762-0200">055-762-0200</a>
       </div>
-
+      <div class="map-container" style="height:auto; background:none;">
+        <img src="images/mbcmap.png" alt="오시는 길 약도" style="width:100%; display:block; border-radius:8px;">
+      </div>
+    </div>
   </section>
 
 
-  <!-- ===== SHARE SECTION ===== -->
+  <!-- ===== SHARE SECTION =====
   <section class="share-section" id="share" style="text-align:center; padding: 40px 20px;">
     <div class="section-title" data-aos="fade-up">공유하기</div>
     <div class="divider" data-aos="fade-up"></div>
     <div class="share-buttons" data-aos="fade-up" style="margin-top: 20px;">
-      <button class="share-btn kakao" id="kakao-share-btn" style="cursor:pointer; border:none; padding:12px 24px; border-radius:8px; font-size:15px; font-weight:500;">카카오톡 공유</button>
-      <button class="share-btn" onclick="copyLink()" style="cursor:pointer; border:1px solid var(--border); padding:12px 24px; border-radius:8px; font-size:15px; background:#fff; margin-left:10px;">링크 복사</button>
+      <button class="share-btn kakao" id="kakao-share-btn">카카오톡 공유</button>
+      <button class="share-btn" onclick="copyLink()">링크 복사</button>
     </div>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <div class="footer">
-    CHUNGKYU & SEUNGMI
+    승미 🤍 충규 피로연 안내장
   </div>
 
   <!-- ===== Navigation ===== -->
@@ -1352,7 +1383,7 @@
         const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-        ddayEl.textContent = `결혼식까지 D-${days}`;
+        ddayEl.textContent = `웨딩 피로연까지 D-${days}`;
         document.getElementById('cd-days').textContent = days;
         document.getElementById('cd-hours').textContent = hours;
         document.getElementById('cd-mins').textContent = mins;
