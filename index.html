@@ -109,21 +109,33 @@
     .main-section {
       position: relative;
       width: 100%;
-      height: 100vh;
-      height: 100svh;
+      height: 85vh;
+      height: 85svh;
       overflow: hidden;
       padding: 0;
     }
 
     .main-bg {
       width: 100%;
-      height: 100vh;
-      height: 100svh;
+      height: 85vh;
+      height: 85svh;
       object-fit: cover;
       display: block;
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    .main-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.3) 100%);
+      pointer-events: none;
+      z-index: 1;
     }
 
     .main-overlay {
@@ -135,10 +147,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 20px 100px;
+      padding: 20px 20px 75px;
       color: #ffffff;
       text-shadow: 0 2px 8px rgba(0,0,0,0.35);
       overflow: visible;
+      z-index: 2;
     }
 
     .main-top {
@@ -199,7 +212,7 @@
       font-weight: 300;
       letter-spacing: 8px;
       opacity: 0.9;
-      margin-bottom: 20px;
+      margin-bottom: 17px;
     }
 
     .main-bottom-label-to {
@@ -208,11 +221,11 @@
       font-style: italic;
       letter-spacing: 2px;
       opacity: 0.75;
-      margin-bottom: 15px;
+      margin-bottom: 13px;
     }
 
     .main-bottom-title {
-      font-size: 27px;
+      font-size: 23px;
       font-weight: 500;
       letter-spacing: 6px;
       margin-bottom: 12px;
@@ -222,7 +235,7 @@
     }
 
     .main-bottom-info {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 300;
       letter-spacing: 1px;
       opacity: 0.9;
@@ -231,7 +244,7 @@
     }
 
     .main-bottom-info.date {
-      font-size: 19px;
+      font-size: 18px;
       letter-spacing: 2px;
       margin-bottom: 2px;
       font-weight: 500;
@@ -624,20 +637,20 @@
     }
 
     .location-name {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       margin-bottom: 8px;
     }
 
     .location-address {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--text-light);
       margin-bottom: 5px;
       line-height: 1.8;
     }
 
     .location-tel {
-      font-size: 17px;
+      font-size: 15px;
       color: var(--text-light);
       margin-bottom: 25px;
     }
@@ -1595,7 +1608,7 @@
     (function() {
       var mainSection = document.querySelector('.main-section');
       var mainBg = document.querySelector('.main-bg');
-      var h = window.innerHeight + 'px';
+      var h = (window.innerHeight * 0.85) + 'px';
       mainSection.style.height = h;
       mainBg.style.height = h;
     })();
