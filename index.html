@@ -6,11 +6,11 @@
   <title>승미 ♥ 충규 결혼합니다</title>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thme808.github.io/wedding-invitation/">
-  <meta property="og:title" content="승미 ♥ 충규 결혼합니다">
-  <meta property="og:description" content="2026년 5월 09일 오후 6시 | MBC컨벤션진주 뷔페">
+  <meta property="og:title" content="승미 🤍 충규 결혼합니다">
+  <meta property="og:description" content="2026년 5월 09일 오후 6시 | MBC컨벤션진주">
   <meta property="og:image" content="https://thme808.github.io/wedding-invitation/images/main.jpeg">
   <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="400">
+  <meta property="og:image:height" content="800">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -195,7 +195,7 @@
       font-weight: 300;
       letter-spacing: 8px;
       opacity: 0.9;
-      margin-bottom: 20;
+      margin-bottom: 20px;
     }
 
     .main-bottom-label-to {
@@ -204,11 +204,11 @@
       font-style: italic;
       letter-spacing: 2px;
       opacity: 0.75;
-      margin-bottom: 6px;
+      margin-bottom: 15px;
     }
 
     .main-bottom-title {
-      font-size: 26px;
+      font-size: 27px;
       font-weight: 500;
       letter-spacing: 6px;
       margin-bottom: 12px;
@@ -218,7 +218,7 @@
     }
 
     .main-bottom-info {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 300;
       letter-spacing: 1px;
       opacity: 0.9;
@@ -227,7 +227,7 @@
     }
 
     .main-bottom-info.date {
-      font-size: 18px;
+      font-size: 19px;
       letter-spacing: 2px;
       margin-bottom: 2px;
       font-weight: 500;
@@ -261,9 +261,21 @@
       width: 100%;
       max-width: 350px;
       margin: 0 auto 30px;
-      border-radius: 8px;
-      overflow: hidden;
       aspect-ratio: 3 / 4.2;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .greeting-photo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 40px 30px #fff;
+      pointer-events: none;
     }
 
     .greeting-photo img {
@@ -274,13 +286,13 @@
     }
 
     .greeting-text {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 2.2;
       color: var(--text-dark);
       font-weight: 300;
-      margin-top: 40px;
+      margin-top: 60px;
 
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       word-break: keep-all;
     }
 
@@ -1124,10 +1136,10 @@
   <!-- ===== 2. GREETING SECTION ===== -->
   <section class="greeting-section" id="greeting">
     <div class="section-title" data-aos="fade-up">귀한 분들을 초대합니다</div>
-    <div class="divider" data-aos="fade-up"></div>ㅇ
+    <div class="divider" data-aos="fade-up"></div>
 
     <div class="greeting-photo" data-aos="fade-up">
-      <img src="images/hello.jpeg" alt="인사하는 신랑신부">
+      <img src="images/img11.jpeg" alt="인사하는 신랑신부">
     </div>
 
     <div class="greeting-text" data-aos="fade-up">
@@ -1255,21 +1267,6 @@
 
     <div class="gallery-grid" data-aos="fade-up" id="galleryGrid">
       <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/img1.jpeg" alt="웨딩 사진 1">
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/img2.jpeg" alt="웨딩 사진 2">
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/img3.jpeg" alt="웨딩 사진 3">
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/img4.jpeg" alt="웨딩 사진 4">
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
-        <img src="images/img5.jpeg" alt="웨딩 사진 5">
-      </div>
-      <div class="gallery-item" onclick="openModal(this)">
         <img src="images/img6.jpeg" alt="웨딩 사진 6">
       </div>
       <div class="gallery-item" onclick="openModal(this)">
@@ -1278,21 +1275,33 @@
       <div class="gallery-item" onclick="openModal(this)">
         <img src="images/img8.jpeg" alt="웨딩 사진 8">
       </div>
+       <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img11.jpeg" alt="웨딩 사진 11">
+      </div>
       <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img12.jpeg" alt="웨딩 사진 12">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img13.jpeg" alt="웨딩 사진 13">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img2.jpeg" alt="웨딩 사진 2">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img5.jpeg" alt="웨딩 사진 5">
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <img src="images/img1.jpeg" alt="웨딩 사진 1">
+      </div>
+      
+           
+      <div class="gallery-item hidden" onclick="openModal(this)">
         <img src="images/img9.jpeg" alt="웨딩 사진 9">
       </div>
       <div class="gallery-item hidden" onclick="openModal(this)">
         <img src="images/img10.jpeg" alt="웨딩 사진 10">
       </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <img src="images/img11.jpeg" alt="웨딩 사진 11">
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <img src="images/img12.jpeg" alt="웨딩 사진 12">
-      </div>
-      <div class="gallery-item hidden" onclick="openModal(this)">
-        <img src="images/img13.jpeg" alt="웨딩 사진 13">
-      </div>
+
       <div class="gallery-item hidden" onclick="openModal(this)">
         <img src="images/img14.jpeg" alt="웨딩 사진 14">
       </div>
@@ -1310,6 +1319,9 @@
       </div>
       <div class="gallery-item hidden" onclick="openModal(this)">
         <img src="images/img19.jpeg" alt="웨딩 사진 19">
+      </div>
+       <div class="gallery-item hidden" onclick="openModal(this)">
+        <img src="images/img4.jpeg" alt="웨딩 사진 4">
       </div>
     </div>
 
@@ -1367,7 +1379,7 @@
         <a href="tel:055-762-0200">055-762-0200</a>
       </div>
       <div class="map-container" style="height:auto; background:none;">
-        <img src="images/mbcmap.png" alt="오시는 길 약도" style="width:100%; display:block; border-radius:8px;">
+        <img src="images/mbcmap.png" alt="오시는 길 약도" style="width:100%; display:block; border-radius:50px;">
       </div>
     </div>
   </section>
