@@ -1773,8 +1773,16 @@
   <script>
     window.addEventListener('load', function() {
       var loader = document.getElementById('loadingScreen');
-      loader.classList.add('fade-out');
-      setTimeout(function() { loader.remove(); }, 600);
+      loader.addEventListener('click', function() {
+        var audio = document.getElementById('bgMusic');
+        audio.volume = 0.4;
+        var btn = document.getElementById('musicToggle');
+        audio.play().then(function() {
+          btn.classList.add('playing');
+        }).catch(function() {});
+        loader.classList.add('fade-out');
+        setTimeout(function() { loader.remove(); }, 600);
+      });
     });
   </script>
 </body>
