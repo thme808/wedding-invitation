@@ -91,7 +91,7 @@
 
     .section-title {
       text-align: center;
-      font-size: 20px;
+      font-size: 23px;
       letter-spacing: 4px;
       color: var(--rose);
       margin-bottom: 30px;
@@ -147,7 +147,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 20px 75px;
+      padding: 20px 20px 100px;
       color: #ffffff;
       text-shadow: 0 2px 8px rgba(0,0,0,0.35);
       overflow: visible;
@@ -255,11 +255,33 @@
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 11px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
       color: #fff;
-      letter-spacing: 3px;
       text-shadow: 0 1px 4px rgba(0,0,0,0.3);
       animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .scroll-label {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-decoration: none;
+      background: rgba(87, 54, 54, 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 8px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .scroll-arrow {
+      font-size: 18px;
     }
 
     @keyframes bounce {
@@ -276,7 +298,7 @@
 
     .banquet-badge {
       display: inline-block;
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 800;
       color: var(--rose);
       background: #fff;
@@ -1323,7 +1345,10 @@
       </div>
     </div>
 
-    <div class="scroll-indicator">🤍</div>
+    <a href="#greeting" class="scroll-indicator">
+      <span class="scroll-label">피로연 안내</span>
+      <span class="scroll-arrow">▼</span>
+    </a>
   </section>
 
   <!-- ===== 2. 피로연 안내 SECTION ===== -->
@@ -1554,7 +1579,7 @@
             </div>
             <div class="account-number-row">
               <span class="account-bank-number"><span class="bank">농협은행</span><span class="number">801032-52-108143</span></span>
-              <button class="copy-btn" onclick="copyAccount('80103252108143')">복사</button>
+              <button class="copy-btn" onclick="copyAccount('농협은행 80103252108143')">복사</button>
             </div>
           </div>
         </div>
@@ -1565,8 +1590,8 @@
               <span class="holder">추미순</span>
             </div>
             <div class="account-number-row">
-              <span class="account-bank-number"><span class="bank">새마을금고</span><span class="number">6414100119341</span></span>
-              <button class="copy-btn" onclick="copyAccount('6414100119341')">복사</button>
+              <span class="account-bank-number"><span class="bank">새마을금고</span><span class="number">6414-1001-1934-1</span></span>
+              <button class="copy-btn" onclick="copyAccount('새마을금고 6414100119341')">복사</button>
             </div>
           </div>
         </div>
